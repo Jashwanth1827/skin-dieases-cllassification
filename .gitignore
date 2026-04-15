@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+skin_clean/
+venv/
+
+# Temp files
+temp_image.jpg
+
+# Secrets
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
