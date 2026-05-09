@@ -1,6 +1,25 @@
+---
+title: Skin Disease Classifier
+emoji: 🔬
+colorFrom: purple
+colorTo: blue
+sdk: streamlit
+sdk_version: 1.31.0
+app_file: skin_disease_app.py
+pinned: false
+---
+
 # 🧠 Skin Disease Classifier
 
 An AI-powered web application that predicts common skin diseases from images using a Convolutional Neural Network (CNN) and provides basic treatment guidance along with nearby dermatologist suggestions.
+
+---
+
+## 🚀 Live Demo
+
+**[Deploy on Hugging Face Spaces](https://huggingface.co/spaces)**
+
+[![Deploy to Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97-Deploy%20to%20Spaces-blue)](https://huggingface.co/spaces)
 
 ---
 
@@ -58,6 +77,48 @@ Skin Diseases classification/
 ├── __pycache__/               # Cache (ignored)
 ├── temp_image.jpg             # Temporary file (ignored)
 ```
+
+---
+
+## 🚀 Deployment Options
+
+### Option 1: Hugging Face Spaces (Recommended - Free)
+
+```bash
+# 1. Install huggingface-cli
+pip install huggingface-hub
+
+# 2. Login
+huggingface-cli login
+
+# 3. Create Space
+huggingface-cli repo create skin-disease-classifier --type space --space_sdk streamlit
+
+# 4. Push code
+git remote add hf https://huggingface.co/spaces/YOUR_USERNAME/skin-disease-classifier
+git push hf main
+```
+
+Then go to your Space → **Settings** → **Repository Secrets** → Add `GOOGLE_API_KEY`
+
+### Option 2: Google Cloud Run (Google Tools Theme)
+
+```bash
+# 1. Build and push to Google Container Registry
+gcloud builds submit --tag gcr.io/YOUR_PROJECT/skin-disease
+
+# 2. Deploy to Cloud Run
+gcloud run deploy skin-disease \
+  --image gcr.io/YOUR_PROJECT/skin-disease \
+  --platform managed \
+  --allow-unauthenticated \
+  --memory 2Gi \
+  --set-env-vars "GOOGLE_API_KEY=your_key_here"
+```
+
+### Option 3: Streamlit Cloud (Simple)
+
+Just connect your GitHub repo on [share.streamlit.io](https://share.streamlit.io). If you get Python 3.14 compatibility errors, update `requirements.txt` to use `tensorflow>=2.20.0` and push.
 
 ---
 

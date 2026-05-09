@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+.git
+.gitattributes
+.gitignore
+venv
+skin_clean
+.env
+temp_image.jpg
+*.pptx
+skin-disease-datasaet
+Dockerfile
+.dockerignore
