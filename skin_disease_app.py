@@ -6,7 +6,6 @@ from PIL import Image
 from io import BytesIO
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-os.environ['TF_USE_LEGACY_KERAS'] = '1'
 
 import tensorflow as tf
 from tensorflow.keras import layers, models
